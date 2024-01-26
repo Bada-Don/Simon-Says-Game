@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.box-container{
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+.box{
+    margin: 0;
+    width:8rem;
+    height:8rem;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+#box1{
+    background-color: yellow;
+}
+#box2{
+    background-color: green;
+}
+#box3{
+    background-color: red;
+}
+#box4{
+    background-color: skyblue;
+}
