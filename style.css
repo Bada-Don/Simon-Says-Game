@@ -7,7 +7,6 @@ body{
     height: 20rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
 }
 .box{
     margin: 0;
