@@ -1,29 +1,119 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-.box-container{
-    width: 20rem;
-    height: 20rem;
+body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(43, 43, 43);
+    margin: 0%;
+    height: 100%;
+    /* Set the height to the full viewport height */
+    overflow: hidden;
 }
-.box{
-    margin: 0;
-    width:8rem;
-    height:8rem;
-    border-radius: 1rem;
-    border: 2px solid black;
+
+h1 {
+    font-family: "Honk", system-ui;
+    font-size: 4rem;
+    text-align: center;
 }
-#box1{
-    background-color: yellow;
+h3{
+    font-family: "Workbench", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: aliceblue;
 }
-#box2{
-    background-color: green;
+.container {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    border-radius: 20rem;
+    border: 1.2rem solid black;
 }
-#box3{
+
+#box0 {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset;
+    border-top-left-radius: 20rem;
     background-color: red;
+    width: 10rem;
+    height: 10rem;
+    transition: ease-in-out 0.2s;
 }
-#box4{
-    background-color: skyblue;
+
+#box0:hover {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px red;
+}
+
+
+#box1 {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset;
+    border-top-right-radius: 20rem;
+    background-color: green;
+    width: 10rem;
+    height: 10rem;
+    transition: ease-in-out 0.2s;
+}
+
+#box1:hover {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px green;
+}
+
+#box2 {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset;
+    border-bottom-left-radius: 20rem;
+    background-color: rgb(0, 183, 255);
+    width: 10rem;
+    height: 10rem;
+    transition: ease-in-out 0.2s;
+}
+
+#box2:hover {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px rgb(0, 183, 255);
+}
+
+#box3 {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset;
+    border-bottom-right-radius: 20rem;
+    background-color: yellow;
+    width: 10rem;
+    height: 10rem;
+    transition: ease-in-out 0.2s;
+}
+
+#box3:hover {
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px yellow;
+}
+.hidden{
+    visibility: hidden;
+}
+.flash0{
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px red;
+}
+.flash1{
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px green;
+}
+.flash2{
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px rgb(0, 183, 255);
+}
+.flash3{
+    box-shadow:
+        5px 5px 50px 5px rgb(0, 0, 0) inset,
+        0 0 40px 5px yellow;
 }
