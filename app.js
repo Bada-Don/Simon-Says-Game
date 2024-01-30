@@ -7,14 +7,30 @@ let btns = document.getElementsByClassName('box');
 let glowBtn = 0;  // Corrected variable name
 let gameStart = false;
 let currLevel = 0;
-
-document.addEventListener('keypress', function (event) {
+let score = document.querySelector('h4');
+let instruct = document.getElementById('instruct');
+let reset = document.getElementById(`reset`);
+document.addEventListener('keypress', function () {
     if (!gameStart) {
         gameStart = true;
         levelUp();
         console.log("Game has started");
+        instruct.innerHTML = `<h5>Game has started !!!</h5>`;
+        instruct.style.top = '50%'
     }
 });
+
+function blink() {
+    if ((levelInfo.textContent === start) || (levelInfo.textContent === over)) {
+        if (levelInfo.classList.contains('hidden')) {
+            levelInfo.classList.remove('hidden');
+        } else {
+            levelInfo.classList.add('hidden');
+        }
+    }
+}
+
+setInterval(blink, 1000);
 
 function flashBtn() {
     console.log("The btn flashes");
@@ -30,17 +46,6 @@ function flashBtn() {
     glowBtn = randIdx;  // Corrected variable assignment
     console.log(glowSeq);
 }
-function blink() {
-    if ((levelInfo.textContent === start) || (levelInfo.textContent === over)) {
-        if (levelInfo.classList.contains('hidden')) {
-            levelInfo.classList.remove('hidden');
-        } else {
-            levelInfo.classList.add('hidden');
-        }
-    }
-}
-
-
 function levelUp() {
     userSeq = [];
     currLevel++;
@@ -48,26 +53,36 @@ function levelUp() {
     levelInfo.classList.remove('hidden');
     flashBtn();
 }
-
-
-setInterval(blink, 1000);
-
-
-
-if (currLevel === 1) {
-    document.addEventListener('click', function (event) {
-        if (event === glowBtn) {
-            console.log("Correct click!");
-            levelUp();
+function chkAnswer(idx) {
+    score.innerText = `Your Score is: ${currLevel}`;
+    if (userSeq[idx] === glowSeq[idx]) {
+        if (userSeq.length === glowSeq.length) {
+            setTimeout(levelUp(), 500);
+            instruct.innerHTML = `<h5>Correct Click !!!</h5>`;
         }
-    });
+    }
+    else {
+        console.log("Wrong Click!");
+        instruct.innerHTML = `<h5>Wrong Click !!!</h5>`;
+        levelInfo.innerText = over;
+        document.body.style.backgroundColor = 'red';
+        setTimeout(() => {
+            document.body.style.backgroundColor = '';
+        }, 250);
+        setTimeout(() => {
+            document.body.style.backgroundColor = 'red';
+        }, 500);
+        setTimeout(() => {
+            document.body.style.backgroundColor = '';
+        }, 750);
+    }
 }
 function btnPress() {
     let btn = this;
     let btnId = btn.getAttribute("id");
     userSeq.push(btnId);
     console.log(userSeq);
-    chkAnswer(currLevel - 1);
+    chkAnswer(userSeq.length - 1);
 
 }
 let allBtns = document.querySelectorAll(".box");
@@ -75,14 +90,21 @@ for (btn of allBtns) {
     btn.addEventListener('click', btnPress);
 }
 
-function chkAnswer(idx) {
-    if (userSeq[idx] === glowSeq[idx]) {
-        if (userSeq.length === glowSeq.length) {
-            levelUp();
-        }
-    }
-    else {
-        console.log("Wrong Click!");
-        levelInfo.innerText = over;
-    }
-}
+reset.addEventListener('click', () => {
+    levelInfo.innerText = start;
+    instruct.innerHTML = `<h5>Instructions</h5>
+                          <div class="intructP">
+                            <p>
+                               1. Press any key to start the game.<br />
+                               2. Click the button which flashes.<br />
+                               3. Keep clicking the same color as it flashes until all buttons light up.<br />
+                               4. If you click a different color, you will lose a life and have to restart from zero.
+                            </p>
+                         </div>`
+    currLevel = 0;
+    glowSeq = [];
+    userSeq = [];
+    score.innerText = `Your Score is: 0`;
+    instruct.style.top = '34%';
+    gameStart = false;
+});

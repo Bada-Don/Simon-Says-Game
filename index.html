@@ -11,17 +11,33 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Workbench&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Poor+Story&family=Workbench&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <h1>Simon Says Game</h1>
     <h3>Press any key to start !!!</h3>
+    <h4>Your Score is: 0</h4>
     <div class="container">
         <button id="0" class="box box0"></button>
         <button id="1" class="box box1"></button>
         <button id="2" class="box box2"></button>
         <button id="3" class="box box3"></button>
+    </div>
+    <button id="reset">Reset</button>
+    <div id="instruct">
+        <h5>Instructions</h5>
+        <div class="intructP">
+            <p>
+                1. Press any key to start the game.<br />
+                2. Click the button which flashes.<br />
+                3. Keep clicking the same color as it flashes until all buttons light up.<br />
+                4. If you click a different color, you will lose a life and have to restart from zero.
+            </p>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

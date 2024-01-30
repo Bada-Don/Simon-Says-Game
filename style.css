@@ -11,16 +11,29 @@ body {
 }
 
 h1 {
+    margin-top: 2%;
+    margin-bottom: 2%;
     font-family: "Honk", system-ui;
     font-size: 4rem;
     text-align: center;
 }
-h3{
+
+h3 {
+    margin-top: 0%;
     font-family: "Workbench", sans-serif;
     font-size: 2rem;
     text-align: center;
     color: aliceblue;
 }
+
+h4 {
+    margin-top: 0%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(67, 151, 224);
+}
+
 .container {
     background-color: rgb(0, 0, 0);
     display: grid;
@@ -94,6 +107,59 @@ h3{
         5px 5px 50px 5px rgb(0, 0, 0) inset,
         0 0 40px 5px yellow;
 }
-.hidden{
+
+.hidden {
     visibility: hidden;
+}
+
+#reset {
+
+    position: absolute;
+    justify-content: flex-start;
+    margin-top: 2%;
+    width: 8rem;
+    height: 3rem;
+    left: 15%;
+    top: 55%;
+    background-color: rgb(242, 230, 0);
+    color: black;
+    border: 2px solid transparent;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0.4rem 0.4rem 0.2rem rgb(0, 0, 0);
+    transition: ease-in-out 0.3s;
+}
+
+#reset:hover {
+    background-color: yellow;
+    border: 2px solid black;
+    scale: 1.1;
+}
+
+#instruct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 12%;
+    top: 34%;
+    width: 20rem;
+    text-align: left;
+}
+
+h5 {
+    font-family: 'Poor story';
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 5%;
+}
+
+p {
+    margin-top: 0%;
+    font-family: 'Poor story';
+    font-size: 1.5rem;
+    color: #ffffff;
+    line-height: 2rem;
 }
