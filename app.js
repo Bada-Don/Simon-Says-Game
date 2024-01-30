@@ -19,7 +19,13 @@ document.addEventListener('keypress', function () {
         instruct.style.top = '50%'
     }
 });
-
+document.addEventListener("touchend", function () {
+    if (!gameStart) {
+        gameStart = true;
+        levelUp();
+        console.log("Game has started");
+    }
+});
 function blink() {
     if ((levelInfo.textContent === start) || (levelInfo.textContent === over)) {
         if (levelInfo.classList.contains('hidden')) {
@@ -36,11 +42,12 @@ function flashBtn() {
     console.log("The btn flashes");
     let randIdx = Math.floor(Math.random() * 4);
     let btn = btns[randIdx];
-
-    btn.style.backgroundColor = "white";
+    setTimeout(() => {
+        btn.style.backgroundColor = "white";
+    }, 250);
     setTimeout(() => {
         btn.style.backgroundColor = "";
-    }, 250);
+    }, 500);
 
     glowSeq.push(`${randIdx}`);
     glowBtn = randIdx;  // Corrected variable assignment

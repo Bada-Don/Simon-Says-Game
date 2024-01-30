@@ -1,0 +1,70 @@
+/* adding media query */
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+        /* Optional: Disable horizontal scrolling */
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #instruct {
+        margin-bottom: 2rem;
+        position: static;
+    }
+
+    #reset {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        position: static;
+    }
+
+    .box0,
+    .box1,
+    .box2,
+    .box3 {
+
+        width: 8.5rem;
+        height: 8.5rem;
+    }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 490px) {
+    body {
+        overflow-x: hidden;
+        /* Optional: Disable horizontal scrolling */
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+    }
+
+    .box0,
+    .box1,
+    .box2,
+    .box3 {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    #instruct {
+        width: 80%;
+        margin-bottom: 8rem;
+        position: static;
+    }
+
+    h5 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    #reset {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        position: static;
+    }
+}
